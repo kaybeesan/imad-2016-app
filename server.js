@@ -64,7 +64,7 @@ Note:Files that are deployed to the server are files as they are currently on th
         date: '21st, Sepember',
         content: `
         <p>
-             This is the content of second article. Using the console. 
+             This is the content of third article. Using the console. 
              This console allows you to write server-sidecode and deploy it to your website. Learn how this console actually works in the section below.   
         </p>`
    }
