@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 var articles = {
-   article-one : {
+    'article-one' : {
     title: 'Article One',
     heading: 'Article One',
     date: '19th, Sepember',
@@ -48,7 +48,7 @@ Note:Files that are deployed to the server are files as they are currently on th
     
 },
 
-   article-two : {
+   'article-two' : {
         title: 'Article Two',
         heading: 'Article Two',
         date: '20th, Sepember',
@@ -58,7 +58,7 @@ Note:Files that are deployed to the server are files as they are currently on th
              This console allows you to write server-sidecode and deploy it to your website. Learn how this console actually works in the section below.   
         </p>` },
    
-   article-three : {
+   'article-three' : {
        title: 'Article Three',
         heading: 'Article Three',
         date: '21st, Sepember',
