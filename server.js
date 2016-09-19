@@ -4,7 +4,8 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-var articleOne = {
+var articles = {
+   article-one : {
     title: 'Article One',
     heading: 'Article One',
     date: '19th, Sepember',
@@ -45,6 +46,28 @@ When you click on the Commit & restartbutton on the sidebar, the files in this c
 Note:Files that are deployed to the server are files as they are currently on this console. These files may or may not be saved to your github repo.
 </p>`
     
+},
+
+   article-two : {
+        title: 'Article Two',
+        heading: 'Article Two',
+        date: '20th, Sepember',
+        content:`
+        <p>
+             This is the content of second article. Using the console. 
+             This console allows you to write server-sidecode and deploy it to your website. Learn how this console actually works in the section below.   
+        </p>` },
+   
+   article-three : {
+       title: 'Article Three',
+        heading: 'Article Three',
+        date: '21st, Sepember',
+        content: `
+        <p>
+             This is the content of second article. Using the console. 
+             This console allows you to write server-sidecode and deploy it to your website. Learn how this console actually works in the section below.   
+        </p>`
+   }
 };
 function createTemplate(data) {
     var title = data.title;
@@ -90,17 +113,20 @@ app.get('/', function (req, res) {
 });
 
 
-app.get('/article-one', function (req, res) {
-    res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res) {
+    var articleName = req.params.articleName;
+    res.send(createTemplate(articles(articlename)));
+    //articlename = article-one
+    //articles(articleName) = () content object for article one
 });
 
-app.get('/article-two', function (req, res) {
+/*app.get('/article-two', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
 });
 
 app.get('/article-three', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
+});*/
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
