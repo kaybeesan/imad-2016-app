@@ -1,3 +1,4 @@
+//module P6
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
@@ -28,24 +29,9 @@ This is the content of first article. Using the console.
 2. Your source code
 
 Files on the sidebar represent the source code of your web app. These files are all actually saved in a git repository on your github account. This console allows you to edit these files, deploy your app, and save these files back to your github repository.
-</p>
-<p>
-3. Editing your files
 
-To edit your files, choose the filename from the sidebar and edit it. When you edit files, these files are not saved back to your github repository. If you make any changes to your files and refresh this page then you will notice that your changes have disappeared.
-</p>
-<p>
-4. Saving your files to github
-
-After you make changes to your file, any unsaved changes will be noticed and a * will appear next to the filename. If you the Commit to github button, these files will be saved to your github repo.
-</p>
-<p>
-5. Deploying your app with changes to source code
-
-When you click on the Commit & restartbutton on the sidebar, the files in this console are committed to your github project and your server process is restarted with these new changes. Your server is accessible on a URL unique to your server: kaybeesan.imad.hasura-app.io
-Note:Files that are deployed to the server are files as they are currently on this console. These files may or may not be saved to your github repo.
 </p>`
-    
+      
 },
 
    'article-two' : {
@@ -56,7 +42,8 @@ Note:Files that are deployed to the server are files as they are currently on th
         <p>
              This is the content of second article. Using the console. 
              This console allows you to write server-sidecode and deploy it to your website. Learn how this console actually works in the section below.   
-        </p>` },
+        </p>` 
+},
    
    'article-three' : {
        title: 'Article Three',
@@ -65,7 +52,8 @@ Note:Files that are deployed to the server are files as they are currently on th
         content: `
         <p>
              This is the content of third article. Using the console. 
-             This console allows you to write server-sidecode and deploy it to your website. Learn how this console actually works in the section below.   
+             This console allows you to write server-sidecode and deploy it to your website. Learn how this              console actually works in the section below.  
+        
         </p>`
    }
 };
@@ -89,7 +77,7 @@ function createTemplate(data) {
         <div>
             <a href = "/"> Home</a>
         </div>
-    <hr>
+        <hr>
         <h1>
             ${heading}
             <div>
@@ -99,17 +87,83 @@ function createTemplate(data) {
         <div>
       ${content}
        </div>
-       </div>
+       <hr>
+     
+       <div>
+       <input type = 'text' id = 'comment' size = '50' placeholder = 'Your        Comments here!!'></input> 
+       <input type = 'submit' id = 'comment_button' value = 'submit'> </input> 
+       <hr>
+       <ul id = 'commentlist'>
+       </ul> 
+       </div>    
     </body>
-</html>
-`;
+    
+</html>`
+;
+
 return htmlTemplate;
+
 }
+
+var counter = 0;
+app.get('/counter', function (req, res) {
+  counter = counter + 1; 
+  res.send(counter.toString());
+
+});
+
+var names = [];
+app.get('/submit-name', function (req, res) {
+//app.get('/submit-name', function (req, res) {
+//get name from request object
+var name = req.query.name;
+//var name = req.params.name;//
+
+names.push(name);
+//JSON Java string object notation - JSON converts objects to strings
+res.send(JSON.stringify(names));  
+});
+
+var comments = [];
+app.get('/article-one/submit-comment', function (req, res) {
+//app.get('/article-one/submit-comment', function (req, res) {
+//get comment from request object
+var comment = req.query.comment;
+//var comment = req.params.comment;//
+
+comments.push(comment);
+//JSON Java string object notation - JSON converts objects to strings
+res.send(JSON.stringify(comments));  
+});
+
+app.get('/article-two/submit-comment', function (req, res) {
+//app.get('/article-two/submit-comment', function (req, res) {
+//get comment from request object
+var comment = req.query.comment;
+//var comment = req.params.comment;//
+
+comments.push(comment);
+//JSON Java string object notation - JSON converts objects to strings
+res.send(JSON.stringify(comments));  
+});
+
+app.get('/article-three/submit-comment', function (req, res) {
+//app.get('/article-three/submit-comment', function (req, res) {
+//get comment from request object
+var comment = req.query.comment;
+//var comment = req.params.comment;//
+
+comments.push(comment);
+//JSON Java string object notation - JSON converts objects to strings
+res.send(JSON.stringify(comments));  
+});
+
+
+
 
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-
 });
 
 
@@ -131,6 +185,11 @@ app.get('/article-three', function (req, res) {
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
+
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
+
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
