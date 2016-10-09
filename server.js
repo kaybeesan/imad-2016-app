@@ -2,7 +2,6 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
 var app = express();
 app.use(morgan('combined'));
 var articles = {
@@ -88,10 +87,9 @@ function createTemplate(data) {
       ${content}
        </div>
        <hr>
-     
        <div>
        <input type = 'text' id = 'comment' size = '50' placeholder = 'Your        Comments here!!'></input> 
-       <input type = 'submit' id = 'comment_button' value = 'submit'> </input> 
+       <input type = 'submit' id = 'comment_button' value = 'submitcomment'> </input> 
        <hr>
        <ul id = 'commentlist'>
        </ul> 
