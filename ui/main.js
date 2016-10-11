@@ -65,7 +65,7 @@ request.send(null);
 //*********************************************
 //submit comment
 
-var remark = document.getElementById('com_btn');
+var remark = document.getElementById('comment_button');
 remark.onclick = function(){
 //create a request object
 var request = new XMLHttpRequest();
