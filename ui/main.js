@@ -66,7 +66,7 @@ request.send(null);
 //submit comment
 
 var remark = document.getElementById('comment_button');
-if (comment-button !== undefined) {
+
 remark.onclick = function(){
 //create a request object
 var request = new XMLHttpRequest();
@@ -87,7 +87,7 @@ request.onreadystatechange = function(){
        }
     
     }
-}
+
 }; 
 
 //make a request
