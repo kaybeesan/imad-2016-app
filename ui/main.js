@@ -66,15 +66,16 @@ request.send(null);
 //submit comment
 
 var remark = document.getElementById('comment_button');
+
 if (comment_button != undefined) {
 remark.onclick = function(){
 //create a request object
 var request = new XMLHttpRequest();
 //capture response and store it in a variable
 request.onreadystatechange = function(){
-    if(request.readyState == XMLHttpRequest.DONE){
+    if(request.readyState === XMLHttpRequest.DONE){
        // if true take some action
-        if(request.status ==200){
+        if(request.status === 200){
            var comments = request.responseText;
            comments =  JSON.parse(comments);
            //capture a list of comments and render it as a list
