@@ -127,7 +127,9 @@ app.get('/article-one/submit-comment', function (req, res) {
 //get comment from request object
 var comment = req.query.comment;
 //var comment = req.params.comment;//
-
+if (comment === null){
+    comment = "default";
+}
 comments.push(comment);
 //JSON Java string object notation - JSON converts objects to strings
 res.send(JSON.stringify(comments));  
