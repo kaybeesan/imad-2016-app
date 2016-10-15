@@ -29,7 +29,6 @@ request.send(null);
 
 
 //submit name
-
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
 //create a request object
@@ -64,11 +63,12 @@ request.send(null);
 
 //*********************************************
 //submit comment
-
+ var commentInput = document.getElementById('comment');
+ var comment = commentInput.value;
+ if (comment != NULL) {
 var remark = document.getElementById('comment_button');
-
-
 remark.onclick = function(){
+   
 //create a request object
 var request = new XMLHttpRequest();
 //capture response and store it in a variable
@@ -92,11 +92,10 @@ request.onreadystatechange = function(){
 }; 
 
 //make a request
-var commentInput = document.getElementById('comment');
-var comment = commentInput.value;
+
 request.open('GET', 'http://kaybeesan.imad.hasura-app.io/article-one/submit-comment?comment='+ comment, true);
 request.send(null);
 };
-
+}
 //**************************
 
