@@ -87,10 +87,8 @@ request.onreadystatechange = function(){
 var commentInput = document.getElementById('comment');
  var comment = commentInput.value;
  console.log(comment);
- req.open('GET', 'http://'+window.location.host+'/submit-comment?comment='+comment, true);
-	req.send(null);
-//request.open('GET','http://kaybeesan.imad.hasura-app.io/submit-comment?comment='+ comment, true);
-//request.send(null);
+request.open('GET','http://kaybeesan.imad.hasura-app.io/article-one/submit-comment?comment='+ comment, true);
+request.send(null);
 };
 }
 //**************************
