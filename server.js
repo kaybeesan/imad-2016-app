@@ -122,7 +122,7 @@ res.send(JSON.stringify(names));
 });
 
 var comments = [];
-app.get('/submit-comment', function (req, res) {
+app.get('/article-one/submit-comment', function (req, res) {
 //app.get('/article-one/submit-comment', function (req, res) {
 //get comment from request object
 var comment = req.query.comment;
