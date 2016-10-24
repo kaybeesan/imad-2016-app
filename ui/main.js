@@ -60,8 +60,9 @@ request.send(null);
 
 
 //submit comment
-var remark = document.getElementById('comment_btn');
-remark.onclick = function() {
+var commentbtn = document.getElementById('comment_btn');
+if (commentbtn){
+commentbtn.onclick = function() {
    
 //create a request object
  var request = new XMLHttpRequest();
@@ -91,6 +92,6 @@ comment = commentInput.value;
 request.open('GET','http://kaybeesan.imad.hasura-app.io/article-one/submit-comment?comment='+ comment, true);
 request.send(null);
 };
-
+}
 //**************************
 
