@@ -55,7 +55,7 @@ request.onreadystatechange = function(){
 
 //make a request
 var nameInput = document.getElementById('name');
-name = nameInput.value;
+var name = nameInput.value;
 request.open('GET', 'http://kaybeesan.imad.hasura-app.io/submit-name?name='+ name, true);
 request.send(null);
 };
@@ -65,8 +65,9 @@ request.send(null);
 //submit comment
  
  
-var remark = document.getElementById('comment_button');
-remark.onclick = function(){
+var comment_button = document.getElementById('comment_button');
+if (comment_button != undefined) {
+comment_button.onclick = function() {
    
 //create a request object
 var request = new XMLHttpRequest();
@@ -96,6 +97,6 @@ var commentInput = document.getElementById('comment');
 request.open('GET', 'http://kaybeesan.imad.hasura-app.io/article-one/submit-comment?comment='+ comment, true);
 request.send(null);
 };
-
+}
 //**************************
 
