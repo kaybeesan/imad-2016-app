@@ -63,7 +63,7 @@ request.send(null);
 var commentbtn = document.getElementById('comment_btn');
 if (commentbtn){
 commentbtn.onclick = function() {
-   
+console.log ("comment button clicked");   
 //create a request object
  var request = new XMLHttpRequest();
 //capture response and store it in a variable
