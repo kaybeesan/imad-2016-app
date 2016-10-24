@@ -91,7 +91,9 @@ function createTemplate(data) {
        <input type = 'submit' id = 'comment_btn' value = 'submitcomment'> 
        <ul id = 'commentlist'>
        </ul> 
-       </div>        
+       </div> 
+       <script type="text/javascript" src="/ui/main.js">
+        </script> 
     </body>
  
 </html>`
