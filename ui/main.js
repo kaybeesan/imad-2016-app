@@ -3,7 +3,7 @@ console.log('Loaded!');
 //counter code
 
 var button = document.getElementById('counter');
-
+if (button) {
 button.onclick = function() {
 //create a request object
 var request = new XMLHttpRequest();
@@ -26,7 +26,7 @@ request.onreadystatechange = function(){
 request.open('GET', 'http://kaybeesan.imad.hasura-app.io/counter', true);
 request.send(null);
 };
-
+}
 
 
 //submit name
