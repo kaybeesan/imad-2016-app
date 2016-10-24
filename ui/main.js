@@ -65,8 +65,7 @@ request.send(null);
 var comment_button = document.getElementById('comment_button');
 if (comment_button != undefined) {
 comment_button.onclick = function() {
-var commentInput = document.getElementById('comment');
- var comment = commentInput.value;   
+   
 //create a request object
  var request = new XMLHttpRequest();
 //capture response and store it in a variable
@@ -90,7 +89,8 @@ request.onreadystatechange = function(){
 }; 
 
 //make a request
-
+var commentInput = document.getElementById('comment');
+ var comment = commentInput.value;
 request.open('GET', 'http://kaybeesan.imad.hasura-app.io/submit-comment?comment='+ comment, true);
 request.send(null);
 };
