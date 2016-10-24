@@ -59,12 +59,9 @@ var name = nameInput.value;
 request.open('GET', 'http://kaybeesan.imad.hasura-app.io/submit-name?name='+ name, true);
 request.send(null);
 };
-//****************
 
 //*********************************************
 //submit comment
- 
- 
 var comment_button = document.getElementById('comment_button');
 if (comment_button != undefined) {
 comment_button.onclick = function() {
