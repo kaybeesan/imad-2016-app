@@ -92,7 +92,8 @@ function createTemplate(data) {
        <ul id = 'commentlist'></input>
        </ul> 
        </div> 
-        
+       <script type="text/javascript" src="/ui/main.js">
+       </script>  
     </body>
  
 </html>`
