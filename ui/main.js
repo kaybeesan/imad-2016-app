@@ -48,19 +48,14 @@ request.onreadystatechange = function(){
          var ul = document.getElementById('namelist'); 
          ul.innerHTML = list;
        }
- 
-    }
-
+   }
 }; 
-
 //make a request
 var nameInput = document.getElementById('name');
 var name = nameInput.value;
 request.open('GET', 'http://kaybeesan.imad.hasura-app.io/submit-name?name='+ name, true);
 request.send(null);
 };
-
-//*********************************************
 //submit comment
 var comment_button = document.getElementById('comment_button');
 if (comment_button != undefined) {
@@ -76,12 +71,12 @@ request.onreadystatechange = function(){
            var comments = request.responseText;
            comments =  JSON.parse(comments);
            //capture a list of comments and render it as a list
-           var list = '';
+           var clist = '';
            for (var i=0; i< comments.length; i++) {
-           list += '<li>' + comments[i] + '</li>';
+           clist += '<li>' + comments[i] + '</li>';
            }
          var ul = document.getElementById('commentlist'); 
-         ul.innerHTML = list;
+         ul.innerHTML = clist;
        }
     
     }
@@ -91,6 +86,7 @@ request.onreadystatechange = function(){
 //make a request
 var commentInput = document.getElementById('comment');
  var comment = commentInput.value;
+ console.log(comment);
 request.open('GET', 'http://kaybeesan.imad.hasura-app.io/submit-comment?comment='+ comment, true);
 request.send(null);
 };
