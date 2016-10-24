@@ -60,10 +60,7 @@ request.send(null);
 var remark = document.getElementById('comment_btn');
 
 remark.onclick = function() {
-var comment = "nil";
-var commentInput = document.getElementById('comment');
-comment = commentInput.value;
-console.log(comment);   
+   
 //create a request object
  var request = new XMLHttpRequest();
 //capture response and store it in a variable
@@ -87,7 +84,8 @@ request.onreadystatechange = function(){
 }; 
 
 //make a request
-
+var commentInput = document.getElementById('comment');
+comment = commentInput.value;
 request.open('GET','http://kaybeesan.imad.hasura-app.io/article-one/submit-comment?comment='+ comment, true);
 request.send(null);
 };
