@@ -56,9 +56,11 @@ var name = nameInput.value;
 request.open('GET', 'http://kaybeesan.imad.hasura-app.io/submit-name?name='+ name, true);
 request.send(null);
 };
+//**************
+
+
 //submit comment
 var remark = document.getElementById('comment_btn');
-
 remark.onclick = function() {
    
 //create a request object
