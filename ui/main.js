@@ -83,6 +83,7 @@ request.onreadystatechange = function(){
            }
          var ul = document.getElementById('commentlist'); 
          ul.innerHTML = clist;
+         clist = "";
        }
     
     }
