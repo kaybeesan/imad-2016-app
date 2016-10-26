@@ -60,7 +60,7 @@ Files on the sidebar represent the source code of your web app. These files are 
         content:
         `<p>` +
              `This is the content of third article. Using the console. 
-             This console allows you to write server-sidecode and deploy it to your website. Learn how this              console actually works in the section below.` + 
+             This console allows you to write server-sidecode and deploy it to your website. Learn how this  console actually works in the section below.` + 
         
         `</p>`
    }
@@ -166,7 +166,7 @@ app.get('/articles/:articleName', function (req, res) {
 pool.query("SELECT * FROM article WHERE title=" + req.params.articleName, function (err,result){
           
         if (err) {
-            res.status(500),send(err.toString());
+            res.status(500).send(err.toString());
         }
         else { 
               if (result.rows.length === 0) {
