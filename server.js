@@ -58,11 +58,8 @@ Files on the sidebar represent the source code of your web app. These files are 
         heading: 'Article Three',
         date: '21st, Sepember',
         content:
-        `<p>` +
-             `This is the content of third article. Using the console. 
-             This console allows you to write server-sidecode and deploy it to your website. Learn how this  console actually works in the section below.` + 
-        
-        `</p>`
+        `<p>
+        </p>`
    }
 };
 function createTemplate(data) {
