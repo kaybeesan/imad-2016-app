@@ -13,61 +13,12 @@ var config = {
 };
 
 app.use(morgan('combined'));
-var articles = {
-    'article-one' : {
-    title: 'Article One',
-    heading: 'Article One',
-    date: '19th, Sepember',
-    content:
-`<p>` +
-`This is the content of first article. Using the console. 
-       This console allows you to write server-sidecode and deploy it to your website. Learn how this console actually works in the section below.`  + 
-`</p>` +
-`<p>` +
-     
-`1. How to write code & test your app
 
-   Click on a filename. Edit its contents.
-   Click on Commit & Restart.
-   Click on the Logs link or open it in a new tab to see what is happening to your server process
-   Click on the Go to app link, or open it in a new tab
-   Your app is now live! (It may take a few minutes before you see your changes applied)` +
-`</p>`  + 
-`<p>` +
-`2. Your source code
-
-Files on the sidebar represent the source code of your web app. These files are all actually saved in a git repository on your github account. This console allows you to edit these files, deploy your app, and save these files back to your github repository.` +
-
-`</p>`
-      
-},
-
-   'article-two' : {
-        title: 'Article Two',
-        heading: 'Article Two',
-        date: '20th, Sepember',
-        content:
-        `<p>` +
-             `This is the content of second article. Using the console. 
-             This console allows you to write server-sidecode and deploy it to your website. Learn how this console actually works in the section below. ` +  
-       ` </p>` 
-},
-   
-   'article-three' : {
-       title: 'Article Three',
-        heading: 'Article Three',
-        date: '21st, Sepember',
-        content:
-        `<p>
-        </p>`
-   }
-};
 function createTemplate(data) {
     var title = data.title;
     var heading = data.heading;
     var date = data.date;
     var content = data.content;
-    
     var htmlTemplate = `
 <html>
     <head>
